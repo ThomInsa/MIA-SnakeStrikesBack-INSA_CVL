@@ -1,0 +1,43 @@
+Classifier,Name,f1,precision,confusionMatrix,AUC,STD
+DummyClassifier(),DummyClassifier,0.5,0.8482446947864816,"[[0.5, 0.0], [0.5, 0.0]]",0.5,0.0
+LogisticRegression(),LogisticRegression,0.62081,0.8482446947864816,"[[0.3, 0.2], [0.18, 0.32]]",0.6626001158902006,0.004050619415138983
+GaussianNB(),GaussianNB,0.61681,0.8482446947864816,"[[0.24, 0.26], [0.12, 0.38]]",0.6921565419216472,0.005228319194062987
+"XGBClassifier(base_score=None, booster=None, callbacks=None,
+              colsample_bylevel=None, colsample_bynode=None,
+              colsample_bytree=None, device=None, early_stopping_rounds=None,
+              enable_categorical=False, eval_metric=None, feature_types=None,
+              gamma=None, grow_policy=None, importance_type=None,
+              interaction_constraints=None, learning_rate=None, max_bin=None,
+              max_cat_threshold=None, max_cat_to_onehot=None,
+              max_delta_step=None, max_depth=None, max_leaves=None,
+              min_child_weight=None, missing=nan, monotone_constraints=None,
+              multi_strategy=None, n_estimators=None, n_jobs=None,
+              num_parallel_tree=None, random_state=None, ...)",XGBClassifier,0.87142,0.8482446947864816,"[[0.42, 0.08], [0.07, 0.43]]",0.9352142525613789,0.002984817559054545
+"StackingClassifier(classifiers=[DummyClassifier(), LogisticRegression(),
+                                GaussianNB(),
+                                XGBClassifier(base_score=None, booster=None,
+                                              callbacks=None,
+                                              colsample_bylevel=None,
+                                              colsample_bynode=None,
+                                              colsample_bytree=None,
+                                              device=None,
+                                              early_stopping_rounds=None,
+                                              enable_categorical=False,
+                                              eval_metric=None,
+                                              feature_types=None, gamma=None,
+                                              grow_policy=None,
+                                              importance_ty...
+                                              learning_rate=None, max_bin=None,
+                                              max_cat_threshold=None,
+                                              max_cat_to_onehot=None,
+                                              max_delta_step=None,
+                                              max_depth=None, max_leaves=None,
+                                              min_child_weight=None,
+                                              missing=nan,
+                                              monotone_constraints=None,
+                                              multi_strategy=None,
+                                              n_estimators=None, n_jobs=None,
+                                              num_parallel_tree=None,
+                                              random_state=None, ...),
+                                <Recursion on StackingClassifier with id=6004801424>],
+                   meta_classifier=LogisticRegression())",StackingClassifier,0.87142,0.8482446947864816,"[[0.42, 0.08], [0.07, 0.43]]",0.8632350321637864,0.0036584122482208777
