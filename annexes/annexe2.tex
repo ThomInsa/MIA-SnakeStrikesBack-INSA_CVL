@@ -1,0 +1,265 @@
+\chapter*{Annexe 2 : Framework du projet}
+\addcontentsline{toc}{chapter}{Annexe 2 : Framework du projet}
+\section*{Outils utilisés}
+
+    La plupart des manipulations du projet ont été réalisées sur Dataspell, un IDE développé par
+    Jetbrains permettant l'utilisation conjointe de notebooks Jupyter, de scripts Python, de
+    différents formats de fichier (csv, npz, parquet) et d'outils pour le BigData.
+
+    La création des Shadow Models exige de se trouver dans un environnement Linux. La
+    distribution utilisée est Mint 22.1. Les scripts créés par l'équipe pour automatiser cette
+    création sont écrits en Bash.
+
+\section*{Librairies Python}
+
+    \begin{longtable}{p{0.32\textwidth}|l|ccc} \toprule
+\textbf{Librairie} & Version & Build & Source \\
+\midrule
+\texttt{anyio}                     & \texttt{4.1.0}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{appdirs}                   & \texttt{1.4.4}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{appnope}                   & \texttt{0.1.4}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{argon2-cffi}               & \texttt{21.3.0}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{argon2-cffi-bindings}      & \texttt{21.2.0}             & \texttt{py311h3336109\_5} & \texttt{conda-forge}\\
+\texttt{argparse-dataclass}        & \texttt{2.0.0}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{arrow}                     & \texttt{1.3.0}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{asgiref}                   & \texttt{3.8.1}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{asttokens}                 & \texttt{2.4.1}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{async-lru}                 & \texttt{1.0.3}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{attrs}                     & \texttt{24.2.0}             & \texttt{pyh71513ae\_0}    & \texttt{conda-forge}\\
+\texttt{babel}                     & \texttt{2.16.0}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{backcall}                  & \texttt{0.2.0}              & \texttt{pyh9f0ad1d\_0}    & \texttt{conda-forge}\\
+\texttt{beautifulsoup4}            & \texttt{4.12.3}             & \texttt{pyha770c72\_0}    & \texttt{conda-forge}\\
+\texttt{bleach}                    & \texttt{6.2.0}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{brotli}                    & \texttt{1.1.0}              & \texttt{h00291cd\_2}      & \texttt{conda-forge}\\
+\texttt{brotli-bin}                & \texttt{1.1.0}              & \texttt{h00291cd\_2}      & \texttt{conda-forge}\\
+\texttt{brotli-python}             & \texttt{1.1.0}              & \texttt{py311hd89902b\_2} & \texttt{conda-forge}\\
+\texttt{bzip2}                     & \texttt{1.0.8}              & \texttt{hfdf4475\_7}      & \texttt{conda-forge}\\
+\texttt{ca-certificates}           & \texttt{2024.12.14}         & \texttt{h8857fd0\_0}      & \texttt{conda-forge}\\
+\texttt{cached-property}           & \texttt{1.5.2}              & \texttt{hd8ed1ab\_1}      & \texttt{conda-forge}\\
+\texttt{cached\_property}           & \texttt{1.5.2}              & \texttt{pyha770c72\_1}    & \texttt{conda-forge}\\
+\texttt{certifi}                   & \texttt{2024.12.14}         & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{cffi}                      & \texttt{1.17.1}             & \texttt{py311h137bacd\_0} & \texttt{conda-forge}\\
+\texttt{charset-normalizer}        & \texttt{3.4.0}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{colorama}                  & \texttt{0.4.6}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{comm}                      & \texttt{0.2.2}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{conda-inject}              & \texttt{1.3.2}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{configargparse}            & \texttt{1.7}                & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{connection-pool}           & \texttt{0.0.3}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{contourpy}                 & \texttt{1.3.1}              & \texttt{py311h4e34fa0\_0} & \texttt{conda-forge}\\
+\texttt{cycler}                    & \texttt{0.12.1}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{cyrus-sasl}                & \texttt{2.1.27}             & \texttt{hf9bab2b\_7}      & \texttt{conda-forge}\\
+\texttt{datrie}                    & \texttt{0.8.2}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{debugpy}                   & \texttt{1.8.9}              & \texttt{py311hc356e98\_0} & \texttt{conda-forge}\\
+\texttt{decorator}                 & \texttt{5.1.1}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{defusedxml}                & \texttt{0.7.1}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{dill}                      & \texttt{0.3.9}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{django}                    & \texttt{5.1.3}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{docutils}                  & \texttt{0.21.2}             & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{dpath}                     & \texttt{2.2.0}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{entrypoints}               & \texttt{0.4}                & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{exceptiongroup}            & \texttt{1.2.2}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{executing}                 & \texttt{2.3.2}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{flit-core}        & \texttt{3.10.1}      & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{fonttools}        & \texttt{4.55.0}      & \texttt{py311ha3cf9ac\_0} & \texttt{conda-forge}\\
+\texttt{fqdn}             & \texttt{1.5.1}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{freetype}         & \texttt{2.12.1}      & \texttt{h60636b9\_2}     & \texttt{conda-forge}\\
+\texttt{gitdb}            & \texttt{4.0.11}      & \texttt{pypi\_0}         & \texttt{pypi}\\
+\texttt{gitpython}        & \texttt{3.1.43}      & \texttt{pypi\_0}         & \texttt{pypi}\\
+\texttt{gputaskscheduler} & \texttt{0.1.0}       & \texttt{dev\_0}          & \texttt{<develop>}\\
+\texttt{h11}              & \texttt{0.13.0}      & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{h2}               & \texttt{4.1.0}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{hpack}            & \texttt{4.0.0}       & \texttt{pyh9f0ad1d\_0}   & \texttt{conda-forge}\\
+\texttt{httpcore}         & \texttt{1.0.7}       & \texttt{pyh29332c3\_1}   & \texttt{conda-forge}\\
+\texttt{httpx}            & \texttt{0.27.2}      & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{humanfriendly}    & \texttt{10.0}        & \texttt{pypi\_0}         & \texttt{pypi}\\
+\texttt{hyperframe}       & \texttt{6.0.1}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{icu}              & \texttt{73.2}        & \texttt{hf5e326d\_0}    & \texttt{conda-forge}\\
+\texttt{idna}             & \texttt{3.10}        & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{immutables}       & \texttt{0.21}        & \texttt{pypi\_0}         & \texttt{pypi}\\
+\texttt{importlib-metadata} & \texttt{8.5.0}    & \texttt{pyha770c72\_0}   & \texttt{conda-forge}\\
+\texttt{importlib\_resources} & \texttt{6.4.5}  & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{ipykernel}        & \texttt{6.29.5}      & \texttt{pyh57ce528\_0}   & \texttt{conda-forge}\\
+\texttt{ipython}          & \texttt{8.11.0}      & \texttt{pyhd1c38e8\_0}   & \texttt{conda-forge}\\
+\texttt{ipywidgets}       & \texttt{8.1.5}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{isoduration}      & \texttt{20.11.0}     & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jedi}             & \texttt{0.19.2}      & \texttt{pyhff2d567\_0}   & \texttt{conda-forge}\\
+\texttt{jinja2}           & \texttt{3.1.4}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{joblib}           & \texttt{1.4.2}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{json5}            & \texttt{0.10.0}      & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jsonpointer}      & \texttt{3.0.0}       & \texttt{py311h6eed73b\_1} & \texttt{conda-forge}\\
+\texttt{jsonschema}       & \texttt{4.23.0}      & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jsonschema-specifications} & \texttt{2024.10.1} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge}\\
+\texttt{jsonschema-with-format-nongpl} & \texttt{4.23.0} & \texttt{hd8ed1ab\_0} & \texttt{conda-forge}\\
+\texttt{jupyter}          & \texttt{1.1.1}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jupyter-lsp}      & \texttt{2.2.5}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jupyter\_client}   & \texttt{8.6.3}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jupyter\_console}  & \texttt{6.6.3}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jupyter\_core}     & \texttt{5.7.2}       & \texttt{pyh31011fe\_1}   & \texttt{conda-forge}\\
+\texttt{jupyter\_events}   & \texttt{0.10.0}      & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jupyter\_server}   & \texttt{2.14.2}      & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jupyter\_server\_terminals} & \texttt{0.5.3} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge}\\
+\texttt{jupyterlab}       & \texttt{4.3.4}       & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jupyterlab\_pygments} & \texttt{0.3.0} & \texttt{pyhd8ed1ab\_1}   & \texttt{conda-forge}\\
+\texttt{jupyterlab\_server} & \texttt{2.27.3} & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{jupyterlab\_widgets} & \texttt{3.0.13} & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{keras}            & \texttt{2.13.1}      & \texttt{pyhd8ed1ab\_0}   & \texttt{conda-forge}\\
+\texttt{kiwisolver}       & \texttt{1.4.7}       & \texttt{py311hf2f7c97\_0} & \texttt{conda-forge}\\
+\texttt{krb5}             & \texttt{1.21.3}      & \texttt{h37d8d59\_0}     & \texttt{conda-forge}\\
+\texttt{lcms2}            & \texttt{2.16}        & \texttt{ha2f27b4\_0}     & \texttt{conda-forge}\\
+\texttt{lerc}                     & \texttt{4.0.0}              & \texttt{hb486fe8\_0}       & \texttt{conda-forge}\\
+\texttt{libblas}                  & \texttt{3.9.0}              & \texttt{25\_osx64\_openblas} & \texttt{conda-forge}\\
+\texttt{libbrotlicommon}          & \texttt{1.1.0}              & \texttt{h00291cd\_2}       & \texttt{conda-forge}\\
+\texttt{libbrotlidec}             & \texttt{1.1.0}              & \texttt{h00291cd\_2}       & \texttt{conda-forge}\\
+\texttt{libbrotlienc}             & \texttt{1.1.0}              & \texttt{h00291cd\_2}       & \texttt{conda-forge}\\
+\texttt{libcblas}                 & \texttt{3.9.0}              & \texttt{25\_osx64\_openblas} & \texttt{conda-forge}\\
+\texttt{libcxx}                   & \texttt{19.1.3}             & \texttt{hf95d169\_0}       & \texttt{conda-forge}\\
+\texttt{libdeflate}               & \texttt{1.22}               & \texttt{h00291cd\_0}       & \texttt{conda-forge}\\
+\texttt{libedit}                  & \texttt{3.1.20191231}       & \texttt{h0678c8f\_2}       & \texttt{conda-forge}\\
+\texttt{libffi}                   & \texttt{3.4.2}              & \texttt{h0d85af4\_5}       & \texttt{conda-forge}\\
+\texttt{libgfortran}              & \texttt{5.0.0}              & \texttt{13\_2\_0\_h97931a8\_3} & \texttt{conda-forge}\\
+\texttt{libgfortran5}             & \texttt{13.2.0}             & \texttt{h2873a65\_3}       & \texttt{conda-forge}\\
+\texttt{libiconv}                 & \texttt{1.17}               & \texttt{hd75f5a5\_2}       & \texttt{conda-forge}\\
+\texttt{libjpeg-turbo}            & \texttt{3.0.0}              & \texttt{h0dc2134\_1}       & \texttt{conda-forge}\\
+\texttt{liblapack}                & \texttt{3.9.0}              & \texttt{25\_osx64\_openblas} & \texttt{conda-forge}\\
+\texttt{libllvm18}                & \texttt{18.1.8}             & \texttt{h9ce406d\_2}       & \texttt{conda-forge}\\
+\texttt{libntlm}                  & \texttt{1.4}                & \texttt{h0d85af4\_1002}    & \texttt{conda-forge}\\
+\texttt{libopenblas}              & \texttt{0.3.28}             & \texttt{openmp\_hbf64a52\_1} & \texttt{conda-forge}\\
+\texttt{libpng}                   & \texttt{1.6.44}             & \texttt{h4b8f8c9\_0}       & \texttt{conda-forge}\\
+\texttt{libsodium}                & \texttt{1.0.20}             & \texttt{hfdf4475\_0}       & \texttt{conda-forge}\\
+\texttt{libsqlite}                & \texttt{3.47.0}             & \texttt{h2f8c449\_1}       & \texttt{conda-forge}\\
+\texttt{libtiff}                  & \texttt{4.7.0}              & \texttt{h583c2ba\_1}       & \texttt{conda-forge}\\
+\texttt{libwebp-base}             & \texttt{1.4.0}              & \texttt{h10d778d\_0}       & \texttt{conda-forge}\\
+\texttt{libxcb}                   & \texttt{1.17.0}             & \texttt{hf1f96e2\_0}       & \texttt{conda-forge}\\
+\texttt{libxgboost}               & \texttt{2.1.3}              & \texttt{cpu\_h63c3a07\_0}  & \texttt{conda-forge}\\
+\texttt{libxml2}                  & \texttt{2.12.7}             & \texttt{hc603aa4\_3}       & \texttt{conda-forge}\\
+\texttt{libzlib}                  & \texttt{1.3.1}              & \texttt{hd23fc13\_2}       & \texttt{conda-forge}\\
+\texttt{llvm-openmp}              & \texttt{19.1.3}             & \texttt{hf78d878\_0}       & \texttt{conda-forge}\\
+\texttt{markupsafe}               & \texttt{3.0.2}              & \texttt{py311h8b4e8a7\_0}  & \texttt{conda-forge}\\
+\texttt{matplotlib}               & \texttt{3.9.2}              & \texttt{py311h6eed73b\_2}  & \texttt{conda-forge}\\
+\texttt{matplotlib-base}          & \texttt{3.9.2}              & \texttt{py311h8b21175\_2}  & \texttt{conda-forge}\\
+\texttt{matplotlib-inline}        & \texttt{0.1.7}              & \texttt{pyhd8ed1ab\_0}     & \texttt{conda-forge}\\
+\texttt{mistune}                  & \texttt{3.0.2}              & \texttt{pyhd8ed1ab\_0}     & \texttt{conda-forge}\\
+\texttt{mlxtend}                  & \texttt{0.23.3}             & \texttt{pypi\_0}           & \texttt{pypi}\\
+\texttt{multiprocess}             & \texttt{0.70.17}            & \texttt{pypi\_0}           & \texttt{pypi}\\
+\texttt{munkres}                   & \texttt{1.1.4}              & \texttt{pyh9f0ad1d\_0}    & \texttt{conda-forge}\\
+\texttt{nbclient}                  & \texttt{0.10.0}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{nbconvert-core}            & \texttt{7.16.4}             & \texttt{pyhd8ed1ab\_1}    & \texttt{conda-forge}\\
+\texttt{nbformat}                  & \texttt{5.10.4}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{ncurses}                   & \texttt{6.5}                & \texttt{hf036a51\_1}      & \texttt{conda-forge}\\
+\texttt{nest-asyncio}              & \texttt{1.6.0}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{notebook}                  & \texttt{7.3.2}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{notebook-shim}             & \texttt{0.2.4}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{numpy}                     & \texttt{1.26.4}             & \texttt{py311hc43a94b\_0} & \texttt{conda-forge}\\
+\texttt{openjpeg}                  & \texttt{2.5.2}              & \texttt{h7310d3a\_0}      & \texttt{conda-forge}\\
+\texttt{openldap}                  & \texttt{2.6.8}              & \texttt{hcd2896d\_0}      & \texttt{conda-forge}\\
+\texttt{openssl}                   & \texttt{3.4.0}              & \texttt{hd471939\_0}      & \texttt{conda-forge}\\
+\texttt{overrides}                 & \texttt{7.7.0}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{packaging}                 & \texttt{24.2}               & \texttt{pyhff2d567\_1}    & \texttt{conda-forge}\\
+\texttt{pandas}                    & \texttt{2.2.3}              & \texttt{py311haeb46be\_1} & \texttt{conda-forge}\\
+\texttt{pandocfilters}             & \texttt{1.5.0}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{parso}                     & \texttt{0.8.4}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{pathos}                    & \texttt{0.3.3}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{patsy}                     & \texttt{1.0.1}              & \texttt{pyhff2d567\_0}    & \texttt{conda-forge}\\
+\texttt{pexpect}                   & \texttt{4.9.0}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{pickleshare}               & \texttt{0.7.5}              & \texttt{py\_1003}         & \texttt{conda-forge}\\
+\texttt{pillow}                    & \texttt{11.0.0}             & \texttt{py311h1f68098\_0} & \texttt{conda-forge}\\
+
+\texttt{pip}                       & \texttt{24.3.1}             & \texttt{pyh8b19718\_0}    & \texttt{conda-forge}\\
+\texttt{pkgutil-resolve-name}      & \texttt{1.3.10}             & \texttt{pyhd8ed1ab\_1}    & \texttt{conda-forge}\\
+\texttt{plac}                      & \texttt{1.4.3}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{platformdirs}              & \texttt{4.3.6}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{pox}                       & \texttt{0.3.5}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{ppft}                      & \texttt{1.7.6.9}            & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{prometheus\_client}         & \texttt{0.21.0}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{prompt-toolkit}            & \texttt{3.0.48}             & \texttt{pyha770c72\_0}    & \texttt{conda-forge}\\
+\texttt{prompt\_toolkit}           & \texttt{3.0.48}             & \texttt{hd8ed1ab\_0}      & \texttt{conda-forge}\\
+\texttt{psutil}                    & \texttt{6.1.0}              & \texttt{py311h1314207\_0} & \texttt{conda-forge}\\
+\texttt{pthread-stubs}             & \texttt{0.4}                & \texttt{h00291cd\_1002}   & \texttt{conda-forge}\\
+\texttt{ptyprocess}                & \texttt{0.7.0}              & \texttt{pyhd3deb0d\_0}    & \texttt{conda-forge}\\
+\texttt{pulp}                      & \texttt{2.9.0}              & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{pure\_eval}                & \texttt{0.2.3}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{py-xgboost}                & \texttt{2.1.3}             & \texttt{cpu\_pyhd3de297\_0} & \texttt{conda-forge}\\
+\texttt{pyarrow}                   & \texttt{18.0.0}             & \texttt{pypi\_0}          & \texttt{pypi}\\
+\texttt{pycparser}                 & \texttt{2.22}               & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{pygments}                  & \texttt{2.18.0}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{pyobjc-core}               & \texttt{10.3.1}             & \texttt{py311hd6939f8\_1} & \texttt{conda-forge}\\
+\texttt{pyobjc-framework-cocoa}    & \texttt{10.3.1}             & \texttt{py311hd6939f8\_1} & \texttt{conda-forge}\\
+\texttt{pyparsing}                 & \texttt{3.2.0}              & \texttt{pyhd8ed1ab\_1}    & \texttt{conda-forge}\\
+\texttt{pysocks}                   & \texttt{1.7.1}              & \texttt{pyha2e5f31\_6}    & \texttt{conda-forge}\\
+\texttt{python}                    & \texttt{3.11.0}             & \texttt{he7542f4\_1\_cpython} & \texttt{conda-forge}\\
+\texttt{python-dateutil}           & \texttt{2.9.0.post0}        & \texttt{pyhff2d567\_0}    & \texttt{conda-forge}\\
+\texttt{python-fastjsonschema}     & \texttt{2.20.0}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{python-json-logger}        & \texttt{2.0.7}              & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{python-tzdata}             & \texttt{2024.2}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{python\_abi}                & \texttt{3.11}               & \texttt{5\_cp311}         & \texttt{conda-forge}\\
+\texttt{pytz}                      & \texttt{2024.1}             & \texttt{pyhd8ed1ab\_0}    & \texttt{conda-forge}\\
+\texttt{pyyaml}                    & \texttt{6.0.2}              & \texttt{py311h3336109\_1} & \texttt{conda-forge}\\
+\texttt{pyzmq}                     & \texttt{26.2.0}             & \texttt{py311h4d3da15\_3} & \texttt{conda-forge}\\
+\texttt{qhull}                     & \texttt{2020.2}             & \texttt{h3c5361c\_5}      & \texttt{conda-forge}\\
+\texttt{readline}                  & \texttt{8.2}                & \texttt{h9e318b2\_1}      & \texttt{conda-forge}\\
+\texttt{referencing} & \texttt{0.35.1} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{requests} & \texttt{2.32.3} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{reretry} & \texttt{0.11.8} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{rfc3339-validator} & \texttt{0.1.4} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{rfc3986-validator} & \texttt{0.1.1} & \texttt{pyh9f0ad1d\_0} & \texttt{conda-forge} \\
+\texttt{rpds-py} & \texttt{0.21.0} & \texttt{py311h3b9c2be\_0} & \texttt{conda-forge} \\
+\texttt{scikit-learn} & \texttt{1.5.2} & \texttt{py311ha1d5734\_1} & \texttt{conda-forge} \\
+\texttt{scipy} & \texttt{1.14.1} & \texttt{py311hed734c1\_1} & \texttt{conda-forge} \\
+\texttt{seaborn} & \texttt{0.13.2} & \texttt{hd8ed1ab\_2} & \texttt{conda-forge} \\
+\texttt{seaborn-base} & \texttt{0.13.2} & \texttt{pyhd8ed1ab\_2} & \texttt{conda-forge} \\
+\texttt{send2trash} & \texttt{1.8.3} & \texttt{pyh31c8845\_0} & \texttt{conda-forge} \\
+\texttt{setuptools} & \texttt{75.5.0} & \texttt{pyhff2d567\_0} & \texttt{conda-forge} \\
+\texttt{six} & \texttt{1.16.0} & \texttt{pyh6c4a22f\_0} & \texttt{conda-forge} \\
+\texttt{smart-open} & \texttt{7.0.5} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{smmap} & \texttt{5.0.1} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{snakemake} & \texttt{8.25.3} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{snakemake-interface-common} & \texttt{1.17.4} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{snakemake-interface-executor-plugins} & \texttt{9.3.2} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{snakemake-interface-report-plugins} & \texttt{1.1.0} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{snakemake-interface-storage-plugins} & \texttt{3.3.0} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{sniffio} & \texttt{1.3.1} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{soupsieve} & \texttt{2.5} & \texttt{pyhd8ed1ab\_1} & \texttt{conda-forge} \\
+\texttt{sqlparse} & \texttt{0.5.2} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{stack\_data} & \texttt{0.6.2} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{statsmodels} & \texttt{0.14.4} & \texttt{py311h0034819\_0} & \texttt{conda-forge} \\
+\texttt{tabulate} & \texttt{0.9.0} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{tensorflow-addons} & \texttt{0.23.0.dev0} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{terminado} & \texttt{0.18.1} & \texttt{pyh31c8845\_0} & \texttt{conda-forge} \\
+\texttt{threadpoolctl} & \texttt{3.5.0} & \texttt{pyhc1e730c\_0} & \texttt{conda-forge} \\
+\texttt{throttler} & \texttt{1.2.2} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{time} & \texttt{1.8} & \texttt{h10d778d\_0} & \texttt{conda-forge} \\
+\texttt{tinycss2} & \texttt{1.4.0} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{tk} & \texttt{8.6.13} & \texttt{h1abcd95\_1} & \texttt{conda-forge} \\
+\texttt{tomli} & \texttt{2.1.0} & \texttt{pyhff2d567\_0} & \texttt{conda-forge} \\
+\texttt{tornado} & \texttt{6.4.1} & \texttt{py311h3336109\_1} & \texttt{conda-forge} \\
+\texttt{tqdm} & \texttt{4.67.0} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{traitlets} & \texttt{5.14.3} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{typeguard} & \texttt{2.13.3} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{types-python-dateutil} & \texttt{2.9.0.20241003} & \texttt{pyhff2d567\_0} & \texttt{conda-forge} \\
+\texttt{typing} & \texttt{3.10.0.0} & \texttt{pyhd8ed1ab\_1} & \texttt{conda-forge} \\
+\texttt{typing-extensions} & \texttt{4.12.2} & \texttt{hd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{typing\_extensions} & \texttt{4.12.2} & \texttt{pyha770c72\_0} & \texttt{conda-forge} \\
+\texttt{typing\_utils} & \texttt{0.1.0} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{tzdata} & \texttt{2024b} & \texttt{hc8b5060\_0} & \texttt{conda-forge} \\
+\texttt{unicodedata2} & \texttt{15.1.0} & \texttt{py311h1314207\_1} & \texttt{conda-forge} \\
+\texttt{uri-template} & \texttt{1.3.0} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{urllib3} & \texttt{2.2.3} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{wcwidth} & \texttt{0.2.13} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{webcolors} & \texttt{24.8.0} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{webencodings} & \texttt{0.5.1} & \texttt{pyhd8ed1ab\_2} & \texttt{conda-forge} \\
+\texttt{websocket-client} & \texttt{1.8.0} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{wheel} & \texttt{0.45.0} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{widgetsnbextension} & \texttt{4.0.13} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{xgboost} & \texttt{2.1.3} & \texttt{cpu\_pyhac85b48\_0} & \texttt{conda-forge} \\
+\texttt{xorg-libxau} & \texttt{1.0.11} & \texttt{h00291cd\_1} & \texttt{conda-forge} \\
+\texttt{xorg-libxdmcp} & \texttt{1.1.5} & \texttt{h00291cd\_0} & \texttt{conda-forge} \\
+\texttt{xz} & \texttt{5.2.6} & \texttt{h775f41a\_0} & \texttt{conda-forge} \\
+\texttt{yaml} & \texttt{0.2.5} & \texttt{h0d85af4\_2} & \texttt{conda-forge} \\
+\texttt{yte} & \texttt{1.5.4} & \texttt{pypi\_0} & \texttt{pypi} \\
+\texttt{zeromq} & \texttt{4.3.5} & \texttt{h7130eaa\_7} & \texttt{conda-forge} \\
+\texttt{zipp} & \texttt{3.21.0} & \texttt{pyhd8ed1ab\_0} & \texttt{conda-forge} \\
+\texttt{zstandard} & \texttt{0.23.0} & \texttt{py311hdf6fcd6\_1} & \texttt{conda-forge} \\
+\texttt{zstd} & \texttt{1.5.6} & \texttt{h915ae27\_0} & \texttt{conda-forge} \\
+\bottomrule
+        \caption{Liste exhaustive des librairies Python utilisées par le projet}
+\end{longtable}
