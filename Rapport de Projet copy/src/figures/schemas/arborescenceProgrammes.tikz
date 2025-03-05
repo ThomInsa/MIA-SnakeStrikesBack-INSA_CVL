@@ -1,0 +1,8 @@
+\begin{tikzpicture}[sibling distance=10em,
+  every node/.style = {shape=rectangle, rounded corners,
+    draw, align=center,
+    top color=white, bottom color=blue!20}]]
+  \node {team6.py}
+    child { node {visualisation} }
+    child { node {datasetsManpipulation} };
+\end{tikzpicture}
