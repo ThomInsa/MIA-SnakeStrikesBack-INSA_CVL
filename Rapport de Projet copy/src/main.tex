@@ -1,0 +1,46 @@
+%! Author = thom
+%! Date = 06/08/2024
+
+% Preamble
+\documentclass[a4paper]{report}
+% Packages
+
+\input{parametres/packages}
+
+% Inclusion des paramètres
+\input{parametres/parametres1}
+\input{biblio/bibConfig}
+
+
+% Document
+\begin{document}
+    % Page de Garde
+    \input{pageDeGarde}
+
+    % Résumé
+    \input{resume_intro_conclu/abstract}
+    % Tables
+    \tableofcontents \newpage
+
+    \listoffigures \newpage
+    \listoftables \newpage
+    \listofmyequations \newpage
+    \lstlistoflistings
+%
+%%     Introduction
+    \input{resume_intro_conclu/introduction}
+    \input{resume_intro_conclu/notations}
+%
+%%     Inclusion des parties
+%    \input{part1/part1}
+    \input{part2/part2}
+    \input{part3/part3}
+
+    \input{resume_intro_conclu/conclusion}
+%%     Inclusion des annexes
+    \input{annexes/annexes}
+    \input{biblio/biblio}
+    % Bibliographie
+
+    %\nocite{*} % récupère toutes les citations
+\end{document}
