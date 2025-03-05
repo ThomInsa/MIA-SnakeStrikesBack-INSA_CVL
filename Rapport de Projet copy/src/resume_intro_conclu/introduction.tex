@@ -1,0 +1,39 @@
+\renewcommand{\abstractname}{Introduction}
+\addcontentsline{toc}{chapter}{Introduction}
+\vspace{1cm}
+\begin{abstract}
+
+    La prolifération des technologies dites d'Intelligence Artificelle, en particulier
+    des modèles génératifs, soulève des questions inédites de sécurité et de confidentialité des
+    données. En effet, la génération de données synthétiques proches de la réalité suppose une
+    proximité élevée entre les données synthétiques disponibles publiquement, et les données
+    d'entrée des modèles génératifs, \textit{a fortiori} privées. Ces questions peuvent se
+    révéler particulièrement  préoccupantes lorsque les données utilisées présentent une
+    sensibilité élevée
+    \textit{(l'emploi d'IA génératives à des fins médicales est par exemple en cours de démocratisation)}.
+
+    Ainsi, le Machine Learning traditionnel nécessite désormais une expertise sur des disciplines
+    émergentes, à la croisée entre IA et cybersécurité
+    \footnote{Certaines entreprises parlent de \textit{MLSecOps}} : c'est le cas du Machine
+    Learning Antagoniste \textit{(Adversarial Machine Learning, \cite{wikiAML})}. Ce champ de
+    recherche a pour but l'étude des attaques contre les algorithmes de Machine Learning et les
+    protections contre celles-ci.
+
+    Parmi ces attaques, un exemple remarquable est celui des Attaques par Inférence de Machine \textit{(Membership Inference Attacks, \cite{MIA_againstML_Paper}, \cite{MIA_againstML_YT})}.
+    Le principe d'une telle attaque est de reconstituer des données réelles à partir de données
+    produites par des modèles génératifs, lesquels devant être supposément protégés contre ce
+    procédé.
+
+    C'est dans ce contexte qu'a été créé \textit{Snake Strikes Back}, deuxième édition d'une
+    compétition encore en version beta. Celle-ci fixe comme objectif la prédiction
+    d'appartenance de séries temporelles aux données d'entrée d'un Réseau Antagoniste Génératif \textit{(GAN, \cite{wikiGAN})}.
+
+    Nous donnons en premier lieu une présentation sommaire du cadre de la compétition.
+    Notre approche du problème est ensuite déclinée en plusieurs composantes : création de
+    données d'entrée pour des Shadow Models, évaluation de ces données d'entrée, entraînement et
+    évaluation de classifieurs binaires. Le dernier chapitre établit la synthèse des résultats
+    obtenus. Les annexes présentent le Framework utilisé par le groupe, les librairies Python \textit{(écrites par le groupe ou non)},
+    ainsi qu'une rétrospective du projet
+    \textit{(chronologie et évaluation par les pairs)}.
+
+\end{abstract}

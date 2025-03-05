@@ -1,0 +1,25 @@
+\addcontentsline{toc}{chapter}{Résumé}
+
+\begin{abstract}
+
+    Le présent rapport a pour objet la synthèse d'un travail mené par un groupe d'étudiants du
+    département Sécurité Informatique de l'INSA Centre Val-de-Loire, dans le cadre de leur participation au
+    concours \textit{Snake Strikes Back} créé par Tristan Allard et Mathias Bernard, chercheurs
+    à l'Université de Rennes. L'objectif du concours est de préciser l'état de l'art sur les
+    protections face aux Attaques par Inférence d'Appartenance \textit{(MIA)} avec une
+    application aux séries temporelles.
+
+    Le déroulement de la compétition est rappelé avant de présenter les résultats de l'équipe.
+    Ceux-ci montrent qu'un Réseau Génératif Antagoniste \textit{(GAN)} est sensible à une fuite
+    partielle de ses données d'entraînement si celles-ci sont d'une densité relativement faible \textit{(1000 tuples)}.
+    En revanche, une augmentation de cette densité éventuellement couplée à un accès restreint
+    aux données d'entrée du GAN entraînent un échec systématique des tentatives d'attaque de
+    l'équipe.
+
+    L'attaque du GAN est pilotée par l'utilisation de Shadows Models dont les données
+    d'entraînement sont connues par l'attaquant. Ainsi, des modèles de classification binaires
+    peuvent être entraînés puis appliquées à des données cible fournies par l'attaquant. La
+    synthèse de l'attaque de ces données est précédée de considérations sur les modèles utilisés et
+    leurs données d'entraînement.
+
+\end{abstract}

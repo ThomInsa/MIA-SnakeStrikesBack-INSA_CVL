@@ -1,0 +1,91 @@
+\chapter{DoppelGANger : un générateur de séries temporelles puissant ... mais vulnérable}
+    Ce chapitre s'appuie principalement sur l'article publié par l'équipe ayant développé le
+    modèle DoppelGANger (\cite{doppelGANger}).
+    \section{Particularités du modèle : comparaison avec un GAN classique}
+
+        \subsection{Fonctionnement global}
+            La principale contrainte reposant sur le GAN est la génération de séries
+            temporelles. En effet l'architecture traditionnelle du GAN
+            \textit{(MLP, Multi-Layer Perceptron)} n'est pas adaptée à la génération de telles
+            données. L'architecture du DoppelGanger est donc une variante de RNN appelée LSTM (
+            long-term short-term memory).
+
+            Le fonctionnement du DoppelGanger, schématisé plus bas, est résumé comme suit par ses
+            créateurs :
+
+            \begin{enumerate}
+                \item Capture des corrélations entre les métadonnées et les mesures, en
+                utilisant un discriminateur auxiliaire
+                \item Ajout de
+                métadonnées factices capturant les valeurs minimales et maximales pour chaque
+                échantillon généré pour remédier au problème d'effondrement des modes
+                \footnote{production d'échantillons très similaires ou identiques, couvrant uniquement
+                une partie limitée (un mode) de la distribution des données réelles, et ne représentant pas
+                la diversité complète des données d'origine} concernant les mesures.
+                \item Utilisation d'un générateur RNN par batchs
+                pour capturer les corrélations temporelles et synthétiser de longues séries temporelles représentatives.
+            \end{enumerate}
+
+            \begin{figure}[H]
+                \centering
+                \fbox{
+                    \includegraphics[width = 0.9
+                    \textwidth]{figures/Resultats/ChapitreDopelGanger/dopelModel}}
+                \caption{Architecture du DoppelGanger donnant les concepts clés et les extensions aux approches type Gan canoniques}
+            \end{figure}
+        \subsection{Hyperparamètres choisis pour la compétition}
+            \begin{tcolorbox}[colback=linkborder_Color!5!white,colframe=linkborder_Color!75!black]
+                Le modèle de la compétition n'inclut pas de métadonnées dans ses entrées et sorties, pour des raisons de simplicité.
+            \end{tcolorbox}
+                \begin{table}[H]
+                    \centering
+                    \begin{tabular}{p{0.5\textwidth}|p{0.35\textwidth}} \toprule
+                        \textbf{Paramètre} & Valeur \\
+                        \midrule
+                            Taille du batch & $200$ \\
+                            Taux d'apprentissage du générateur & $6.10^{-3}$ \\
+                            Taux d'apprentissage du discriminateur & $5.10^{-3}$ \\
+                            Nombre de réseaux cachés du générateur & $5$\\
+                            Taille des réseaux cachés du générateur & $75$ \\
+                            Nombre d'epochs & $1000$ \textit{(pour les tâches 1 et 3)} ou $5000$
+                    \textit{(pour les tâches 2 et 4)} \\
+                        \bottomrule
+                    \end{tabular}
+                    \caption{Valeurs assignées aux hyperparamètres du modèle pour la compétition}
+                    \label{tabDopel:}
+                \end{table}
+    \newpage\section{Vers une méthodologie d'attaque}
+
+        Une fois les ressources appropriées par l'équipe, il est possible de déterminer une première approche du problème, en trouvant un compromis entre exploitation des ressources disponibles,
+        adaptation à des néophytes en Machine Learning, temps et efficacité de la méthode de résolution.
+
+        L'atout principal dont l'équipe dispose est que $\mathcal G$ est mis à disposition. Il est
+        alors possible de conduire de nombreuses expérimentations en le prenant comme point de départ.
+
+        Bien que les scripts soient intégralement fournis, l'équipe adopte une
+        approche essentiellement "black-box" par souci de simplicité. La méthode d'attaque peut
+        alors être résumée comme suit :
+
+        \begin{enumerate}
+            \item Sélection de faux dataset privé $\mathbb{S}'_{Pri_i}$
+            \item Génération de faux datasets synthétiques $\mathbb S_{Synth_i}'$ en entraînant $\mathcal G$ sur $\mathbb{S}'_{Pri_i}$
+            \item Entraînement d'un algorithme de classification $\mathcal C$ sur un dataset
+            d'entraînement $\mathbb{S}'_{Etr}$ dont l'appartenance des lignes à
+            $\mathbb{S}'_{Pri_i}$ est connue
+            \item Classification de $\mathbb{C}$ par l'algorithme
+        \end{enumerate}
+
+        Cette méthode utilisant un avatar du générateur initial est appelée \textbf{attaque par Shadow Model}. Celle-ci suppose de déterminer intelligemment $\mathbb{S}'_{Pri}$ d'une part, et $\mathcal C$ d'autre part. C'est l'objet de la partie suivante qui consacre un chapitre à chacun de ces points, puis résume leur efficacité sur chaque tâche.
+
+            \newpage\begin{figure}[H]
+                \centering
+                \fbox{\input{figures/schemas/schemaMethodesShadowModels.tikz}}
+                \caption{Éléments d'une attaque par \textit{Shadow Models} pour un problème de classification}
+            \end{figure}
+
+        \begin{tcolorbox}[colback=linkborder_Color!5!white,colframe=linkborder_Color!75!black]
+            Les expérimentations présentées plus bas découlent, sauf mention explicite du
+            contraire, de l'étude de la tâche 2
+            \textit{(petit dataset d'entraînement et connaissance a priori de l'ensemble des données utilisées)}.
+            La portabilité de celles-ci sur une autre tâche n'a été que partiellement abordée.
+        \end{tcolorbox}

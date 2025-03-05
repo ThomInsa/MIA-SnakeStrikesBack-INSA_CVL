@@ -1,0 +1,84 @@
+% Paramètres globaux
+    \definecolor{linkborder_Color}{rgb}{0.1329,0.247,0.467}
+    \definecolor{urlborder_Color}{rgb}{0,1,1}
+    \definecolor{url_Color}{rgb}{1,0,0}
+
+    \hypersetup
+    {
+        %author = {Thomas AUBIN},
+        %pdftitle = {Nom du Projet - Sujet du Projet},
+        pdfsubject = {Mémoire de Projet},
+        pdfkeywords = {Tag1, Tag2, Tag3, \dots},
+        pdfstartview={FitH},
+        linkbordercolor = {linkborder_Color}
+        %urlbordercolor = \color{urlborder_Color},
+        %urlcolor = \color{url_Color}
+    }
+
+% Format des niveaux
+    % Chiffres romains pour les chapitres
+        \renewcommand{\thechapter}{\Roman{chapter}}
+        \setlength{\cftchapnumwidth}{\widthof{\large\bfseries{}XVIII}}
+        \setlength{\cftsecnumwidth}{\widthof{\large\bfseries{}XVIII}}
+        \setlength{\cftsubsecnumwidth}{\widthof{\large\bfseries{}XVIIIII}}
+        \setlength{\cftsubsubsecnumwidth}{\widthof{\large\bfseries{}XVIIIIII}}
+        \setlength{\cfttabnumwidth}{\widthof{\large\bfseries{}XVIIII}}
+        \setlength{\cftfignumwidth}{\widthof{\large\bfseries{}XVIIII}}
+    % Rajouter les numérotation pour les \paragraphe et \subparagraphe
+        \setcounter{secnumdepth}{4}
+        \setcounter{tocdepth}{4}
+
+
+% Format de l'environnement abstract
+    \renewcommand{\abstractnamefont}{\normalfont\Large\bfseries}
+% Définir une liste d'équations
+    \newcommand{\listequationsname}{Table des Équations}
+    \newlistof{myequations}{equ}{\listequationsname}
+    \newcommand{\myequations}[1]
+    {%
+        \addcontentsline{equ}{myequations}{\protect\numberline{\theequation}\hspace{3 mm} #1}\par
+    }
+
+% Format des tableaux
+    \newcolumntype{u}{>{\columncolor{PaleTurquoise1}} p{0.0727\textwidth}}
+    \newcolumntype{d}{>{\columncolor{LightBlue1}} p{0.0727\textwidth}}
+    \newcolumntype{t}{>{\columncolor{Khaki1}} p{0.0677\textwidth}}
+    \newcolumntype{q}{>{\columncolor{Khaki2}} p{0.0727\textwidth}}
+    \newcolumntype{U}{>{\columncolor{PaleTurquoise1}} p{0.13\textwidth}}
+    \newcolumntype{D}{>{\columncolor{LightBlue1}} p{0.13\textwidth}}
+    \newcolumntype{T}{>{\columncolor{Khaki1}} p{0.13\textwidth}}
+    \newcolumntype{Q}{>{\columncolor{Khaki2}} p{0.13\textwidth}}
+
+% Format des codes
+    \renewcommand{\lstlistlistingname}{Table des éléments de code}
+
+    \definecolor{codegreen}{rgb}{0,0.6,0}
+    \definecolor{codegray}{rgb}{0.5,0.5,0.5}
+    \definecolor{codepurple}{rgb}{0.58,0,0.82}
+    \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+    \lstdefinestyle{mystyle}{
+        backgroundcolor=\color{backcolour},
+        frame = single,
+        commentstyle=\color{codegreen},
+        keywordstyle=\color{magenta},
+        numberstyle=\tiny\color{codegray},
+        stringstyle=\color{codepurple},
+        basicstyle=\ttfamily\footnotesize,
+        breakatwhitespace=false,
+        breaklines=true,
+        captionpos=b,
+        keepspaces=true,
+        numbers=left,
+        numbersep=5pt,
+        showspaces=false,
+        showstringspaces=false,
+        showtabs=false,
+        tabsize=2,
+        language={Python}
+    }
+    \lstset{style = mystyle}
+% Définir une ligne horizontale
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+% Bibliographie
+    \addbibresource{main.bib}

@@ -1,0 +1,47 @@
+\renewcommand{\abstractname}{Notations}
+\addcontentsline{toc}{chapter}{Notations}
+
+\begin{abstract}
+    \begin{tcolorbox}[colback=linkborder_Color!5!white,colframe=linkborder_Color!75!black]
+        Pour l'ensemble du rapport, les notations suivantes sont adoptées.
+        \begin{itemize}
+            \item $T_i,\; i\in[1,4]$ désigne une des 4 des tâches de la compétition.
+            \item $\mathbb S$ désigne un ensemble de données comprises entre 0 et 1 structurées
+            en 7 classes. En particulier :
+                \begin{itemize}
+                    \item $\mathbb{S}_{Pub_{T_{1-2}}}$ et $\mathbb{S}_{Pub_{T_{3-4}}}$ sont les
+                    datasets publics de la compétition.
+                    \item $\mathbb{S}_{Priv_{T_{i}}}$ est un dataset privé inaccessible par
+                    les attaquants.
+                    \item $\mathbb{S}'_{Priv_{T_{i}}}$ est un dataset obtenu en concaténant tous
+                    les datasets d'entraînement des Shadow Models créés par l'équipe.
+                    \item $\mathbb{S}_{Etr_{T_{i}}}$ est un dataset utilisé pour entraîner un
+                    classifieur. Il est composé pour moitié de $\mathbb{S}'_{Priv_{T_{i}}}$ et
+                    pour moitié de lignes de $\mathbb{S}_{Pub_{T_{i - i+1}}}$ disjointes de $\mathbb{S}'_{Priv_{T_{i}}}$.
+                    Chaque ligne a une classe supplémentaire, booléenne, fonction de
+                    l'appartenance ou non à $\mathbb{S}'_{Priv_{T_{i}}}$.
+                \end{itemize}
+            \item $\mathbb C$ est un ensemble du même format et de taille 100. Les attaquants
+            doivent déterminer si chacune de ces lignes est un membre ou non du dataset privé.
+            \item $\mathcal G$ est l'abréviation de "DoppelGanger", le modèle génératif que l'on
+            cherche à attaquer.
+            \item $\mathcal C$ est un algorithme de classification visant à attribuer la classe 0 ou
+            1 à chaque tuple d'un $\mathbb S$ donné, cet attribut désignant l'appartenance ou non au
+            dataset public.
+            \item $E_{T_i, C, l_{n}}, E_{T_i, \overline C, l_{n}}$  désigne une expérience
+            complète de classification. En particulier :
+                \begin{itemize}
+                    \item $T_i$ est la tâche abordée.
+                    \item $l_n$ signifie que les classifieurs sont entraînés sur $n\times 1000$
+                    lignes.
+                    \item $C | \overline{C}$ indique si les données d'entrée sont proches des
+                    données attaquées \textit{("Clean" ou non)}.
+                \end{itemize}
+            \item $\mathfrak H\left( \mathbb{S} \right)$ est une visualisation de la
+            distribution statistique de chaque classe de $\mathbb{S}$.
+            \item $\mathfrak D\left( \mathbb{S}_1, \mathbb{S}_2 \right)$ est la divergence de
+            Jensen-Shannon entre deux datasets.
+            \item $\mathtt{S}_{T_i}$ désigne un score obtenu sur la tâche $i$.
+        \end{itemize}
+    \end{tcolorbox}
+\end{abstract}
